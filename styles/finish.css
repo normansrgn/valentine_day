@@ -21,6 +21,7 @@ body {
 }
 .night {
   position: fixed;
+  left: 50%;
   top: 0;
   transform: translateX(-50%);
   width: 100%;
