@@ -17,7 +17,8 @@
    text-align: center;
 }
 #card p {
-   font-size: 1.5em;
+  padding-top: 30px;
+   font-size: 21px;
    text-align: justify;
    padding-left: 30px; /* Espacio en blanco a la izquierda */
    padding-right: 30px; /* Espacio en blanco a la derecha */
@@ -44,7 +45,7 @@
 
 .side {
    background:#eee;
-   height:550px;
+   height:757px;
    width:400px;
 /*    border:1px solid red; */
    padding:10px;
