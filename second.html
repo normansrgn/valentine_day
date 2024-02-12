@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Days</title>
+    <link rel="stylesheet" href="./styles/second_lay.css">
+</head>
+
+<body>
+
+
+
+    <div class="valentines-day">
+        <div class="envelope"></div>
+        <div class="heart"></div>
+        <div class="text">HAPPY <br>VALENTINE'S <br>DAY!</div>
+        <div class="front"></div>
+    </div>
+
+    <div id="card">
+        <div class="side one"></div>
+        <div class="side two">
+            <h2>Вальс Любви</h2>
+            <p class="text_font">
+                В день святого валентина, звёзды твоих глаз,
+                Сияют, словно свечи, в ночи без конца.
+
+                Сердце бьется ритмично, в твоей любви весь мир,
+                С каждым взглядом твоим, словно песнь, звучит здесь.
+                Розы красные, словно поцелуи весны,
+                Цветут в наших руках, в любви нашей венцы.
+                Пусть этот день будет, как сказочный лист,
+                Где любовь наша растет, нежно, как цветы в саду весны.
+
+            </p>
+
+            <p class="text_font">
+
+            </p>
+            <a href="./finish.html"> <button class="finish_btm">
+                  Love
+                </button>
+            </a>
+        </div>
+
+
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>$(document).ready(function () {
+            // Al cargar la página, ocultamos las cortinas
+            $('.left-curtain').css('width', '0%');
+            $('.right-curtain').css('width', '0%');
+
+            $('.valentines-day').click(function () {
+                // Animación de desvanecimiento de los elementos del sobre
+                $('.envelope').css({ 'animation': 'fall 3s linear 1', '-webkit-animation': 'fall 3s linear 1' });
+                $('.envelope').fadeOut(800, function () {
+                    // Ocultar elementos dentro de .valentines-day
+                    $('.valentines-day .heart, .valentines-day .text, .valentines-day .front').hide();
+
+
+                    // Hacer visible la carta con una animación ondulante
+                    $('#card').css({ 'visibility': 'visible', 'opacity': 0, 'transform': 'scale(0.1)' });
+                    $('#card').animate({ 'opacity': 1 }, {
+                        duration: 1000, step: function (now, fx) {
+                            var scale = 1 + Math.sin(now * Math.PI) * 0.1; // Calculamos la escala basada en la función seno
+                            $(this).css('transform', 'scale(' + scale + ')');
+                        }
+                    }); // Animación de ondulación
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
